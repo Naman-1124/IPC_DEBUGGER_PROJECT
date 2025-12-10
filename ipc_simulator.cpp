@@ -37,5 +37,7 @@ void simulatePipe() {
 int main() {
     cout << "=== IPC Debugger Tool: Pipe Simulation ===\n";
     simulatePipe();
+    // REVISION 3: Final program termination message
+    cout << "[END] Simulation complete. Exiting program." << endl;
     return 0;
 }
