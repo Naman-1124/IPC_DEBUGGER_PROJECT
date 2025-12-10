@@ -17,6 +17,8 @@ void simulatePipe() {
     }
     // Child Process
     if (pid == 0) {
+        // REVISION 2: Child process indicator
+        cout << "[CHILD] Child process executing" << endl;
         close(pipefd[0]); // Close read end
         string message = "Hello from Child Process (PIPE)";
         write(pipefd[1], message.c_str(), message.size() + 1);
@@ -24,6 +26,8 @@ void simulatePipe() {
     } 
     // Parent Process
     else {
+        // REVISION 2: Parent process indicator
+        cout << "[PARENT] Parent process executing" << endl;
         close(pipefd[1]); // Close write end
         read(pipefd[0], buffer, sizeof(buffer));
         cout << "Parent received: " << buffer << endl;
