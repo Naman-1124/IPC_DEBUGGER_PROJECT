@@ -2,6 +2,8 @@
 #include <unistd.h>
 using namespace std;
 void simulatePipe() {
+    // REVISION 1: Process start indicator
+    cout << "[INFO] Pipe simulation started" << endl;
     int pipefd[2];
     char buffer[50];
     if (pipe(pipefd) == -1) {
